@@ -1,0 +1,17 @@
+{
+  "uuid": "0c70c3b0-e7eb-44aa-817c-47d899549e59",
+  "shortName": "Todeloj",
+  "longName": "Todeloj",
+  "companyName": "chuckwired",
+  "versionCode": 1,
+  "versionLabel": "1.0",
+  "watchapp": {
+    "watchface": true
+  },
+  "appKeys": {
+    "dummy": 0
+  },
+  "resources": {
+    "media": []
+  }
+}
