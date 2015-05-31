@@ -7,13 +7,16 @@ static void update_time() {
 	time_t temp = time(NULL);
 	struct tm *tick_time = localtime(&temp);
 	
-	//Do the update
+	//Update time buffers
 	static char buffer[] = "00:00";
 	if(clock_is_24h_style() == true){
 		strftime(buffer, sizeof("00:00"), "%H:%M", tick_time);
 	} else {
-		strftime(buffer, sizeof("00:00"), "%I:%M", tick_time);
-	} text_layer_set_text(time_layer, buffer);
+		 buffer[0] < 10 ? strftime(buffer, sizeof("0:00"), "%I:%M", tick_time) : strftime(buffer, sizeof("0:00"), "%I:%M", tick_time);
+	} 
+	
+	//Set the values
+	text_layer_set_text(time_layer, buffer);
 }
 
 static void window_load(Window *window) {
