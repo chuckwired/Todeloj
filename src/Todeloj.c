@@ -1,7 +1,7 @@
 #include <pebble.h>
 
 static Window *window;
-static TextLayer *time_layer;
+static TextLayer *time_layer, *hour_layer, *minute_layer, *date_layer, *day_layer;
 
 static void update_time() {
 	time_t temp = time(NULL);
