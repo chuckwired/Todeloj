@@ -18,22 +18,33 @@ static void update_time() {
 	//Set the values
 	if (timeBuffer[0] == '0') {timeBuffer[0] = ' '; }
 	text_layer_set_text(time_layer, timeBuffer);
+	
+	//Dates
+	static char dateBuffer[] = "JAN 01";
+	strftime(dateBuffer, sizeof("JAN 01"), "%B %I", tick_time);
+	text_layer_set_text(date_layer, dateBuffer);
 }
 
 static void window_load(Window *window) {
   Layer *window_layer = window_get_root_layer(window);
   GRect bounds = layer_get_bounds(window_layer);
 
-  //Setuip + styling
+  //Time layer
   time_layer = text_layer_create(GRect(0, 55, 144, 50));
   text_layer_set_text_alignment(time_layer, GTextAlignmentCenter);
   text_layer_set_font(time_layer, fonts_get_system_font(FONT_KEY_BITHAM_42_LIGHT));
-  //Add
   layer_add_child(window_layer, text_layer_get_layer(time_layer));
+  
+  //Date layer
+  date_layer = text_layer_create(GRect(0, 120, 144, 50));
+  text_layer_set_text_alignment(date_layer, GTextAlignmentCenter);
+  text_layer_set_font(date_layer, fonts_get_system_font(FONT_KEY_BITHAM_42_LIGHT));
+  layer_add_child(window_layer, text_layer_get_layer(date_layer));
 }
 
 static void window_unload(Window *window) {
   text_layer_destroy(time_layer);
+  text_layer_destroy(date_layer);
 }
 
 static void tick_handler(struct tm *tick_time, TimeUnits units_changed) {
