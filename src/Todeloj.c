@@ -47,7 +47,7 @@ static void window_load(Window *window) {
   layer_add_child(window_layer, text_layer_get_layer(date_layer));
   
   //Day layer
-  day_layer = text_layer_create(GRect(110, 112, 25, 25));
+  day_layer = text_layer_create(GRect(110, 112, 30, 25));
   text_layer_set_text_alignment(day_layer, GTextAlignmentRight);
   text_layer_set_font(day_layer, fonts_get_system_font(FONT_KEY_GOTHIC_24));
   layer_add_child(window_layer, text_layer_get_layer(day_layer));
