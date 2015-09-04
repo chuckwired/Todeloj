@@ -20,7 +20,7 @@ static void update_time() {
 	text_layer_set_text(time_layer, timeBuffer);
 	
 	//Dates
-	static char dateBuffer[] = "DECEMBER 01";
+	static char dateBuffer[] = "SEPTEMBER 01";
 	strftime(dateBuffer, sizeof(dateBuffer), "%B %e", tick_time);
 	text_layer_set_text(date_layer, dateBuffer);
 	
