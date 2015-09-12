@@ -1,10 +1,10 @@
 {
-  "uuid": "0c70c3b0-e7eb-44aa-817c-47d899549e59",
+  "uuid": "b6b9f8a9-e08b-44e3-84ad-63464cfce762",
   "shortName": "Todeloj",
   "longName": "Todeloj",
   "companyName": "chuckwired",
   "versionCode": 1,
-  "versionLabel": "1.0",
+  "versionLabel": "0.4",
   "watchapp": {
     "watchface": true
   },
